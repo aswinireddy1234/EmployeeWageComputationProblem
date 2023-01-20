@@ -1,4 +1,5 @@
 echo "welcome to Employee wage computation program"
+
 isPartTime=1;
 isFullTime=2;
 totalSalary=0;
@@ -8,6 +9,7 @@ empRatePerHr=20;
 numWorkingDays=20;
 day=1;
 
+declare -A day
 function calculateWorkingHour() {
        case $randomCheck in $siFullTime)
        empHrs=8;;
@@ -34,10 +36,10 @@ salary=$(($empRatePerHr*$wHour));
 
 totalSalary=$(($totalSalary+$salary))
 ((day++))
+echo "Daily wise salary: " ${salary[*]}
+echo "Employee Total salary: " ${totalSalary[*]}
+echo "Employee working Day: " ${day[*]}
 done
 
-echo "Daily wise salary: " ${salary[@]}
-echo "Employee Total salary salary: " ${totalSalary[@]}
 echo "Employee has earned $totalSalary$ in a month (Total working Hour :$totalWorkingHour)";
-
 
