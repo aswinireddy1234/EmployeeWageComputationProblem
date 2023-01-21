@@ -10,6 +10,7 @@ numWorkingDays=20;
 day=1;
 
 declare -A day
+
 function calculateWorkingHour() {
        case $randomCheck in $siFullTime)
        empHrs=8;;
@@ -20,6 +21,7 @@ function calculateWorkingHour() {
 esac
 echo $empHrs;
 }
+
 while [[ $day -le 20 && $totalWorkingHour -lt 100 ]]
 do
 randomCheck=$((RANDOM%3));
@@ -42,4 +44,3 @@ echo "Employee working Day: " ${day[*]}
 done
 
 echo "Employee has earned $totalSalary$ in a month (Total working Hour :$totalWorkingHour)";
-
